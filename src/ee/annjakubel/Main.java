@@ -1,5 +1,6 @@
 package ee.annjakubel;
 
+import ee.annjakubel.ui.UserInterface;
 import ee.annjakubel.wrap.Wrap;
 
 import java.util.Scanner;
@@ -10,15 +11,29 @@ public class Main {
 	// write your code here
         Scanner scanner = new Scanner(System.in);
         Wrap wrap = new Wrap();
+        UserInterface ui = new UserInterface();
 
-        System.out.println("What kind of tortilla?");
-        System.out.println("1.wheat  2.wholegrain  3.no tortilla(give me a salad)");
-        String tortillaType = scanner.nextLine();
-
+        String tortillaType = ui.askTortillaType();
         wrap.setTortilla(tortillaType);
-        if (tortillaType == "invalid") {
-            System.out.println("Invalid input, please try again.");
-            
+        while (wrap.getTortilla().equals("invalid")) {
+            System.out.println("Invalid input. Please try again.");
+            System.out.println("");
+            String newTortillaType = ui.askTortillaType();
+            wrap.setTortilla(newTortillaType);
+
         }
+
+        System.out.println("");
+
+        String meatType = ui.askMeatType();
+        wrap.setMeat(meatType);
+        while (wrap.getMeat().equals("invalid")) {
+            System.out.println("Invalid input. Please try again.");
+            System.out.println("");
+            String newMeatType = ui.askMeatType();
+            wrap.setMeat(newMeatType);
+        }
+
+        //veggies (arrlist) and sauce for next time
     }
 }

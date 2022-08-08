@@ -23,6 +23,7 @@ public class Wrap {
     }
 
     public String getTortilla() {
+
         return tortilla;
     }
 
@@ -38,7 +39,7 @@ public class Wrap {
                 this.tortilla = "no tortilla";
                 break;
             default:
-                "invalid";
+                this.tortilla = "invalid";
                 break;
         }
     }
@@ -47,8 +48,27 @@ public class Wrap {
         return meat;
     }
 
-    public void setMeat(String meat) {
-        this.meat = meat;
+    public void setMeat(String meatType) {
+        switch (meatType) {
+            case "1":
+                this.meat = "kebab";
+                break;
+            case "2":
+                this.meat = "chicken";
+                break;
+            case "3":
+                this.meat = "ham";
+                break;
+            case "4":
+                this.meat = "salami";
+                break;
+            case "5":
+                this.meat = "tofu";
+                break;
+            default:
+                this.meat = "invalid";
+                break;
+        }
     }
 
     public ArrayList<String> getVeggies() {
