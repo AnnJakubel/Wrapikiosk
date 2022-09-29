@@ -3,6 +3,7 @@ package ee.annjakubel;
 import ee.annjakubel.ui.UserInterface;
 import ee.annjakubel.wrap.Wrap;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -33,6 +34,10 @@ public class Main {
             String newMeatType = ui.askMeatType();
             wrap.setMeat(newMeatType);
         }
+
+        ArrayList<String> veggies = ui.askVeggies();
+        wrap.setVeggies(veggies);
+
 
         //veggies (arrlist) and sauce for next time
     }

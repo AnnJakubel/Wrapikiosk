@@ -1,5 +1,7 @@
 package ee.annjakubel.ui;
 
+import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UserInterface {
@@ -21,5 +23,33 @@ public class UserInterface {
         System.out.println("1.kebab  2.chicken  3.ham  4.salami  5.tofu (no meat)");
         String meatType = scanner.nextLine();
         return meatType;
+    }
+
+    public ArrayList<String> askVeggies() {
+        ArrayList<String> veggies = new ArrayList<>();
+
+        while(veggies.size() < 4) {
+            System.out.println("");
+            System.out.println("Would you like vegetables?");
+            System.out.println("Y/N");
+            String answer = scanner.nextLine().toLowerCase();
+
+            if (answer.equals("n")) {
+                break;
+            } else if (answer.equals("y")) {
+                System.out.println("Choose vegetable:");
+                String input = scanner.nextLine();
+                veggies.add(input);
+                continue;
+            } else {
+                System.out.println("Invalid input");
+                System.out.println("Try again");
+                continue;
+            }
+        }
+
+        System.out.println("");
+        System.out.println("That's all for veggies!");
+        return veggies;
     }
 }
