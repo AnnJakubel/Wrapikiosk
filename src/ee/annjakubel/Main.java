@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         Scanner scanner = new Scanner(System.in);
         Wrap wrap = new Wrap();
         UserInterface ui = new UserInterface();
@@ -38,7 +38,17 @@ public class Main {
         ArrayList<String> veggies = ui.askVeggies();
         wrap.setVeggies(veggies);
 
+        String sauceType = ui.askSauceType();
+        wrap.setSauce(sauceType);
+        while (wrap.getSauce().equals("invalid")) {
+            System.out.println("Invalid input. Please try again.");
+            System.out.println("");
+            String newSauceType = ui.askSauceType();
+            wrap.setSauce(newSauceType);
+        }
 
-        //veggies (arrlist) and sauce for next time
+        System.out.println(wrap.toString());
+        System.out.println("");
+        System.out.println("Enjoy!");
     }
 }

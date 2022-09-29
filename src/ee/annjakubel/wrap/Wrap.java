@@ -83,9 +83,35 @@ public class Wrap {
         return sauce;
     }
 
-    //TODO: sauce + main
+    public void setSauce(String sauceType) {
+        switch (sauceType) {
+            case "1":
+                this.sauce = "BBQ";
+                break;
+            case "2":
+                this.sauce = "mayo";
+                break;
+            case "3":
+                this.sauce = "ketchup";
+                break;
+            case "4":
+                this.sauce = "mustard";
+                break;
+            case "5":
+                this.sauce = "ranch";
+                break;
+            case "6":
+                this.sauce = "caesar";
+                break;
+            case "7":
+                this.sauce = "no sauce";
+                break;
+            default:
+                this.sauce = "invalid";
+        }
+    }
 
-    public void setSauce(String sauce) {
-        this.sauce = sauce;
+    public String toString() {
+        return "Order: \n" + this.tortilla + "\n" + this.meat + "\n" + this.veggies + "\n" + this.sauce + "\n";
     }
 }

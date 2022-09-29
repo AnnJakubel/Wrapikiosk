@@ -48,8 +48,15 @@ public class UserInterface {
             }
         }
 
-        System.out.println("");
         System.out.println("That's all for veggies!");
+        System.out.println("");
         return veggies;
+    }
+
+    public String askSauceType() {
+        System.out.println("What kind of sauce?");
+        System.out.println("1.BBQ  2.mayo  3.ketchup  4.mustard  5.ranch  6.caesar  7.no sauce");
+        String sauceType = scanner.nextLine();
+        return sauceType;
     }
 }
